@@ -1,0 +1,44 @@
+// https://codepen.io/IstiyakAmin/pen/aqZWWN
+
+.loader{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	   -moz-transform: translate(-50%,-50%);
+	    -ms-transform: translate(-50%,-50%);
+	     -o-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 10em;
+        color: rgba(255, 255, 255, .1);
+        background-image: url(https://image.ibb.co/ciSeac/image.png);
+        background-repeat: repeat-x;
+        -webkit-background-clip: text;
+        animation: animate 10s linear forwards;
+        user-select: none;
+    
+    }
+}
+
+@keyframes animate{
+	0% {
+		background-position: left 0px top 80px;
+	}
+	40% {
+		background-position: left 800px top -50px;
+	}
+	80% {
+		background-position: left 1600px top -120px;
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		background-position: left 2400px top -130px;
+		transform: translateX(400%) scale(80);
+	}
+}
