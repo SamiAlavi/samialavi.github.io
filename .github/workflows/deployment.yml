@@ -2,19 +2,35 @@ name: Continuous Deployment
 on:
   push:
     branches:
-      - production
+      - main
 
 jobs:
+  push_to_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Push changes to branch
+        uses: ad-m/github-push-action@master
+        with:
+          branch: production
+          force: 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   deploy:
     runs-on: ubuntu-latest
+    needs: push_to_branch
 
     strategy:
       matrix:
         node-version: [16.x]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout "production" branch
+        run: git checkout production
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
