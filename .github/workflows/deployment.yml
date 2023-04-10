@@ -55,4 +55,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Compile and deploy"
-          commit_options: "--author 'GitHub Actions <actions@github.com>'"
+          commit_options: "--author 'GitHub_Actions <actions@github.com>'"
