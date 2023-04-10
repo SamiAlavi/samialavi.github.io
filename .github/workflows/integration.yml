@@ -1,4 +1,4 @@
-name: Angular GitHub CI
+name: Continuous Integration
 on:
   push:
     branches:
@@ -16,6 +16,7 @@ jobs:
         node-version: [16.x]
 
     steps:
+      - name: Checkout code
       - uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
