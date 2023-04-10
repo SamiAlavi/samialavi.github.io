@@ -45,9 +45,6 @@ jobs:
       - name: Production Build
         run: npm run build:prod
 
-      - name: Create folder for compiled files
-        run: mkdir docs
-
       - name: Copy compiled files to folder
         run: cp -r dist/* docs/
 
