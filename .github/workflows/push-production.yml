@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Push changes to branch
-        uses: mathieudutour/github-actions-push-branch@v1
+        uses: ad-m/github-push-action@master
         with:
           branch: production
-          force: true
+          force: 'true'
