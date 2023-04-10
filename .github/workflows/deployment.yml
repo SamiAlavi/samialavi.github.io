@@ -29,11 +29,10 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Checkout "production" branch
-        run: git checkout production
+        uses: actions/checkout@v2
+        with:
+          ref: production
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
