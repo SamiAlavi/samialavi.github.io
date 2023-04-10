@@ -3,12 +3,15 @@ on:
   push:
     branches:
       - main
+
 jobs:
   push_to_branch:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Push changes to branch
         uses: ad-m/github-push-action@master
         with:
