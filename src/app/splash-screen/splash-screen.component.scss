@@ -1,0 +1,56 @@
+// https://codepen.io/IstiyakAmin/pen/aqZWWN
+
+
+:root {
+	--font-size: 10em;
+}
+
+@media only screen and (max-width: 960px) {
+	:root {
+		--font-size: 16px;
+	}
+}
+
+.loader{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+		font-size: var(--font-size);
+        color: rgba(255, 255, 255, .1);
+        background-image: url(https://image.ibb.co/ciSeac/image.png);
+        background-repeat: repeat-x;
+        -webkit-background-clip: text;
+        animation: animate 10s linear forwards;
+        user-select: none;
+    
+    }
+}
+
+@keyframes animate {
+	0% {
+		background-position: left 0px top 80px;
+	}
+	40% {
+		background-position: left 800px top -50px;
+	}
+	80% {
+		background-position: left 1600px top -120px;
+		transform: scale(1);
+		font-size: var(--font-size);
+	}
+	100% {
+		background-position: left 2400px top -130px;
+		transform: translateX(410%) scale(100);
+		font-size: 10em;
+	}
+}
