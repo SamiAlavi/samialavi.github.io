@@ -8,13 +8,15 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { LaptopComponent } from './laptop/laptop.component';
 import { NgParticlesModule } from 'ng-particles';
 import { ParticlesComponent } from './particles/particles.component';
+import { MeshGradientComponent } from './mesh-gradient/mesh-gradient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BaseComponent,
     SplashScreenComponent,
-    ParticlesComponent
+    ParticlesComponent,
+    MeshGradientComponent
   ],
   imports: [
     BrowserModule,
