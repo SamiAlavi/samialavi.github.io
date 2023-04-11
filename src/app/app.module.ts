@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseComponent } from './base/base.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
-import { NgParticlesModule } from 'ng-particles';
-import { ParticlesComponent } from './particles/particles.component';
+// import { NgParticlesModule } from 'ng-particles';
+// import { ParticlesComponent } from './particles/particles.component';
 import { MeshGradientComponent } from './mesh-gradient/mesh-gradient.component';
 
 @NgModule({
@@ -14,13 +14,13 @@ import { MeshGradientComponent } from './mesh-gradient/mesh-gradient.component';
     AppComponent,
     BaseComponent,
     SplashScreenComponent,
-    ParticlesComponent,
+    // ParticlesComponent,
     MeshGradientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgParticlesModule
+    // NgParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
