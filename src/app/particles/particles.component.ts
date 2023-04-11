@@ -20,7 +20,7 @@ export class ParticlesComponent {
   }
 
   private setParticleOptions() {
-    this.particlesOptions.background.color.value = this.backgroundColor;
+    this.particlesOptions.background.color.value = "transparent";
   }
   
 
