@@ -1,3 +1,4 @@
-<div id="background">
-    <app-splash-screen></app-splash-screen>
+<div id="background" [style.background-color]="backgroundColor">
+    <app-splash-screen (destroyed)="splashScreenDestroyed($event)"></app-splash-screen>
+    <app-particles *ngIf="!isSplashScreenVisible" [backgroundColor]="backgroundColor"></app-particles>
 </div>

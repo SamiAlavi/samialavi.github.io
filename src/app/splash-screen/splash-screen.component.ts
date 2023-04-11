@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, Renderer2, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, ViewChild, Renderer2, ViewEncapsulation, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-splash-screen',
@@ -8,6 +8,7 @@ import { Component, ElementRef, ViewChild, Renderer2, ViewEncapsulation } from '
 })
 export class SplashScreenComponent {
   @ViewChild('animationContainer', {static: true}) private animationContainer!: ElementRef;
+  @Output() destroyed = new EventEmitter<boolean>();
   
   constructor(
     private renderer: Renderer2,
@@ -20,11 +21,7 @@ export class SplashScreenComponent {
   
     animationElement.addEventListener('animationend', () => {
       this.host.nativeElement.remove();
-
-      const background: HTMLElement | null = document.querySelector("div#background");
-      if (background) {
-        background.style.backgroundColor = "#4AA3FF";
-      }
+      this.destroyed.emit(true);
     });
   }
 }
