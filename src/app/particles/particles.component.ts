@@ -16,11 +16,15 @@ export class ParticlesComponent {
 
   constructor() {
     this.particlesOptions = {...particlesOptions};
+  }
+
+  ngOnInit() {
     this.setParticleOptions();
+
   }
 
   private setParticleOptions() {
-    this.particlesOptions.background.color.value = "transparent";
+    this.particlesOptions.background.color.value = this.backgroundColor;
   }
   
 

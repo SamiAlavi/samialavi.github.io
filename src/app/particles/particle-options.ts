@@ -2,6 +2,9 @@ import { ClickMode, HoverMode, MoveDirection, OutMode } from "tsparticles-engine
 
 
 const particlesOptions = {
+    fullScreen: {
+        enable: false
+    },
     background: {
         color: {
             value: "#000",

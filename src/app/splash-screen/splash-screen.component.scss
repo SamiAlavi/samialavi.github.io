@@ -11,7 +11,7 @@
 	}
 }
 
-.loader{
+.loader {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -27,13 +27,30 @@
         text-transform: uppercase;
 		font-size: var(--font-size);
         color: rgba(255, 255, 255, .1);
-        background-image: url(https://image.ibb.co/ciSeac/image.png);
-        background-repeat: repeat-x;
+        // background-image: url(https://image.ibb.co/ciSeac/image.png);
+        // animation: animate 10s linear forwards;
+        // background-repeat: repeat-x;
         -webkit-background-clip: text;
-        animation: animate 10s linear forwards;
         user-select: none;
     
     }
+
+	.p-card-title {
+		text-align: center;
+	}
+
+	.p-card, .p-splitter, .p-splitter-gutter {
+		background-color: rgba(255, 255, 255, 0.5)
+	}
+
+	.p-splitter {
+		border: 0px;
+		border-radius: 0px;
+	}
+
+	.p-splitter-gutter {
+		width: 0px !important;
+	}
 }
 
 @keyframes animate {
