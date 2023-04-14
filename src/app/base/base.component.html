@@ -1,7 +1,4 @@
 <div id="background" [style.background-color]="backgroundColor">
-    <app-splash-screen (destroyed)="splashScreenDestroyed($event)"></app-splash-screen>
-    <ng-container *ngIf="!isSplashScreenVisible">
-        <!-- <app-mesh-gradient></app-mesh-gradient> -->
-        <!-- <app-particles [backgroundColor]="backgroundColor"></app-particles> -->
-    </ng-container>
+    <app-mesh-gradient></app-mesh-gradient>
+    <app-splash-screen></app-splash-screen>
 </div>

@@ -13,9 +13,4 @@ export class BaseComponent {
   constructor() {
 
   }
-
-  splashScreenDestroyed(isDestroyed: boolean) {
-    this.backgroundColor = "#4AA3FF";
-    this.isSplashScreenVisible = false;
-  }
 }
