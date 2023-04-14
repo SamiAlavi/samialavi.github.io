@@ -10,6 +10,7 @@ import { NgParticlesModule } from 'ng-particles';
 import { ParticlesComponent } from './particles/particles.component';
 import { MeshGradientComponent } from './mesh-gradient/mesh-gradient.component';
 import { NgPrimeModule } from './ngprime.module';
+import { BackgroundChooserComponent } from './background-chooser/background-chooser.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NgPrimeModule } from './ngprime.module';
     BaseComponent,
     SplashScreenComponent,
     ParticlesComponent,
-    MeshGradientComponent
+    MeshGradientComponent,
+    BackgroundChooserComponent
   ],
   imports: [
     BrowserModule,

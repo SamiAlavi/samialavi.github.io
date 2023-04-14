@@ -1,0 +1,12 @@
+<p-card header="Choose Background">
+    <p-splitter [style]="{ height: '300px' }" [panelSizes]="[50, 50]" [minSizes]="[50, 50]">
+        <ng-template pTemplate>
+            <app-mesh-gradient></app-mesh-gradient>
+        </ng-template>
+        <ng-template pTemplate>
+            <div style="width: 100%; height: 100%;">
+                <app-particles [backgroundColor]="'#4AA3FF'"></app-particles>
+            </div>
+        </ng-template>
+    </p-splitter>
+</p-card>
