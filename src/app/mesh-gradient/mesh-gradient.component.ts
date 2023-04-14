@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Gradient } from '../helpers/Gradient.js';
+import { GradientWrapper } from '../helpers/Gradient/gradient-wrapper';
 
 @Component({
   selector: 'app-mesh-gradient',
@@ -8,13 +8,19 @@ import { Gradient } from '../helpers/Gradient.js';
 })
 export class MeshGradientComponent {
 
+  private debug = false;
+
   constructor() {
   }
 
   ngAfterViewInit() {    
-    const gradient: any = new Gradient()
+    const gradientWrapper = new GradientWrapper();
   
     // Call `initGradient` with the selector to your canvas
-    gradient.initGradient('#gradient-canvas');
+    gradientWrapper.initGradient('#gradient-canvas');
+
+    if (this.debug) {
+      (window as any).gradient = gradientWrapper;
+    }
   }
 }

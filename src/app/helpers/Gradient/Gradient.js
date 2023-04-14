@@ -519,4 +519,4 @@ function normalizeColor(hexCode) {
   * Gradient.updateFrequency(freq)
   */
   
-  export { Gradient }
+  export { normalizeColor, Gradient }
