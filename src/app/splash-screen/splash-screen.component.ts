@@ -8,6 +8,7 @@ import { Component, ElementRef, ViewChild, Renderer2, ViewEncapsulation, EventEm
 })
 export class SplashScreenComponent {
   @ViewChild('animationContainer', {static: true}) private animationContainer!: ElementRef;
+  @Output() destroyed = new EventEmitter<boolean>();
   
   constructor(
     private renderer: Renderer2,
@@ -20,6 +21,7 @@ export class SplashScreenComponent {
   
     animationElement.addEventListener('animationend', () => {
       this.host.nativeElement.remove();
+      this.destroyed.emit(true);
     });
   }
 }

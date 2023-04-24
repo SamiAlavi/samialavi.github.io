@@ -13,4 +13,8 @@ export class BaseComponent {
   constructor() {
 
   }
+
+  isSplashScreenDestroyed(event: boolean) {
+    this.isSplashScreenVisible = false;
+  }
 }
