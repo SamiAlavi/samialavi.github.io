@@ -14,23 +14,23 @@ import { BackgroundChooserComponent } from './background-chooser/background-choo
 import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BaseComponent,
-    SplashScreenComponent,
-    ParticlesComponent,
-    MeshGradientComponent,
-    BackgroundChooserComponent,
-    HeaderComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NgPrimeModule,
-    NgParticlesModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BaseComponent,
+        SplashScreenComponent,
+        ParticlesComponent,
+        MeshGradientComponent,
+        BackgroundChooserComponent,
+        HeaderComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NgPrimeModule,
+        NgParticlesModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

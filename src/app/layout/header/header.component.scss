@@ -7,7 +7,7 @@
     padding: 0 2rem;
     display: flex;
     align-items: center;
-	animation: animate 0.5s ease-out forwards;
+    animation: animate 0.5s ease-out forwards;
 }
 
 @keyframes animate {
@@ -21,4 +21,4 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.25) inset;
     opacity: 0.9;
-  }
+}

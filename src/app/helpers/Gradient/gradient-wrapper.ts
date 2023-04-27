@@ -59,8 +59,8 @@ class GradientWrapper {
 
     private normalizedRGBtoHex(color: [number, number, number]): string {
         const hexes = color.map((val) => {
-            const x = (val*255).toString(16);   //Convert to a base16 string
-            return (x.length==1) ? `0${x}` : x;   //Add zero if we get only one character
+            const x = (val * 255).toString(16);   //Convert to a base16 string
+            return (x.length == 1) ? `0${x}` : x;   //Add zero if we get only one character
         })
         return `#${hexes.join("")}`;
     }
@@ -101,7 +101,7 @@ class GradientWrapper {
             this.setBaseColor(color);
         }
         else {
-            this.setWaveLayerColor(index-1, color);
+            this.setWaveLayerColor(index - 1, color);
         }
 
         this.validateRGBColors();
