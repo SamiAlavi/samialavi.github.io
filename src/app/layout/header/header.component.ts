@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { GradientColorsPickerComponent } from '../gradient-colors-picker/gradient-colors-picker.component';
 import { EventEmitterService } from 'src/app/services/event-emitter.service';
+import { gradientCssVariables } from 'src/app/helpers/variables';
 
 @Component({
     selector: 'app-header',
@@ -35,9 +36,9 @@ export class HeaderComponent {
             this.eventEmitterService.gradientUpdateColors.emit(updatedHexCodes);
 
             const root = document.documentElement;
-            const cssVariables = value.cssVariables;
             updatedHexCodes.forEach((hexCode, index) => {
-                root.style.setProperty(cssVariables[index], hexCode);
+                root.style.setProperty(gradientCssVariables[index], hexCode);
+                localStorage.setItem(gradientCssVariables[index], hexCode);
             })
         }
     }

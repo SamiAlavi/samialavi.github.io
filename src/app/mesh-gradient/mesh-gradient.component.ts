@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { GradientWrapper } from '../helpers/Gradient/gradient-wrapper';
 import { EventEmitterService } from '../services/event-emitter.service';
+import { gradientCssDefaultColors, gradientCssVariables } from '../helpers/variables';
 
 @Component({
     selector: 'app-mesh-gradient',
@@ -21,7 +22,16 @@ export class MeshGradientComponent {
     ngOnInit() {
         if (this.subscribe) {
             this.subscribeEvents();
+            this.syncGradientColors();
         }
+    }
+
+    private syncGradientColors() {
+        const root = document.documentElement;
+        gradientCssVariables.forEach((cssVariable, index) => {
+            const cachedColor = localStorage.getItem(cssVariable) ?? gradientCssDefaultColors[index];
+            root.style.setProperty(cssVariable, cachedColor);
+        });
     }
 
     ngAfterViewInit() {
