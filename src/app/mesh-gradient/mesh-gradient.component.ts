@@ -12,14 +12,21 @@ export class MeshGradientComponent {
     private debug = false;
     private gradientWrapper!: GradientWrapper;
     @Input() divId!: string;
+    @Input() subscribe!: boolean;
+    @Input() isStatic!: boolean;
 
     constructor(private eventEmitterService: EventEmitterService) {
-        this.subscribeEvents();
+    }
+
+    ngOnInit() {
+        if (this.subscribe) {
+            this.subscribeEvents();
+        }
     }
 
     ngAfterViewInit() {
         const selectorDivId = `#${this.divId}`;
-        this.gradientWrapper = new GradientWrapper();
+        this.gradientWrapper = new GradientWrapper(this.isStatic);
 
         // Call `initGradient` with the selector to your canvas
         this.gradientWrapper.initGradient(selectorDivId);
@@ -40,6 +47,10 @@ export class MeshGradientComponent {
 
     private gradientStart = () => {
         this.gradientWrapper.play();
+    }
+
+    setColorAtIndex(index: number, hexCode: string) {
+        this.gradientWrapper.setColorAtIndex(index, hexCode);
     }
 
 

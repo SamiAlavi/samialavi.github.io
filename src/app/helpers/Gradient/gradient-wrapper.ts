@@ -9,8 +9,9 @@ class GradientWrapper {
     gradient: any;
     private playAnimation = true;
 
-    constructor() {
+    constructor(isStatic: boolean) {
         this.gradient = new Gradient();
+        this.gradient.isStatic = isStatic;
     }
 
     get cssVarRetries(): number {
@@ -95,6 +96,7 @@ class GradientWrapper {
     }
 
     setColorAtIndex(index: number, hexCode: string) {
+        hexCode = hexCode.replace("#", "0x");
         const color = this.normalizeColor(hexCode);
 
         if (index === 0) {

@@ -13,7 +13,6 @@ export class HeaderComponent {
     private ref!: DynamicDialogRef;
 
     constructor(private dialogService: DialogService, private eventEmitterService: EventEmitterService) {
-
     }
 
     showGradientColorsPickerDialog() {
@@ -22,7 +21,8 @@ export class HeaderComponent {
         this.ref = this.dialogService.open(GradientColorsPickerComponent, {
             header: 'Gradient Colors Picker',
             width: '70%',
-            contentStyle: { overflow: 'auto' },
+            height: '70%',
+            contentStyle: { overflow: 'hidden' },
             baseZIndex: 10000,
             maximizable: false
         });

@@ -290,7 +290,7 @@ class Gradient {
             e(this, "angle", 0),
             e(this, "isLoadedClass", !1),
             e(this, "isScrolling", !1),
-            /*e(this, "isStatic", o.disableAmbientAnimations()),*/
+            e(this, "isStatic", false),
             e(this, "scrollingTimeout", void 0),
             e(this, "scrollingRefreshDelay", 200),
             e(this, "isIntersecting", !1),

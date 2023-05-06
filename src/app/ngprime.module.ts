@@ -4,6 +4,7 @@ import { SplitterModule } from 'primeng/splitter';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
         CardModule,
         ButtonModule,
         DynamicDialogModule,
+        ColorPickerModule,
     ],
 })
 export class NgPrimeModule { }

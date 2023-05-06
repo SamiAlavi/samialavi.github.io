@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BaseComponent } from './base/base.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
@@ -27,6 +28,7 @@ import { GradientColorsPickerComponent } from './layout/gradient-colors-picker/g
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         NgPrimeModule,
