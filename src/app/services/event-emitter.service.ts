@@ -5,5 +5,8 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class EventEmitterService {
 
+    gradientPause = new EventEmitter<void>();
+    gradientStart = new EventEmitter<void>();
+
     constructor() { }
 }
