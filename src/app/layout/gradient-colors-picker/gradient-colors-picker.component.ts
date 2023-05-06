@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { MeshGradientComponent } from 'src/app/mesh-gradient/mesh-gradient.component';
+
 
 @Component({
     selector: 'app-gradient-colors-picker',
@@ -8,13 +10,16 @@ import { MeshGradientComponent } from 'src/app/mesh-gradient/mesh-gradient.compo
 })
 export class GradientColorsPickerComponent {
     @ViewChild("meshGradientPreview", { static: true }) meshGradientPreview !: MeshGradientComponent;
-    hexCodes: string[] = [];
 
-    constructor() {
-        const cssVariables = ["--gradient-color-1", "--gradient-color-2", "--gradient-color-3", "--gradient-color-4"];
+    private cssVariables = ["--gradient-color-1", "--gradient-color-2", "--gradient-color-3", "--gradient-color-4"];
+    hexCodes: string[] = [];
+    updatedHexCodes: string[] = [];
+
+    constructor(private ref: DynamicDialogRef) {
         const computedStyle = getComputedStyle(document.documentElement);
 
-        this.hexCodes = cssVariables.map((cssVariable) => computedStyle.getPropertyValue(cssVariable).trim().toUpperCase());
+        this.hexCodes = this.cssVariables.map((cssVariable) => computedStyle.getPropertyValue(cssVariable).trim().toUpperCase());
+        this.updatedHexCodes = this.hexCodes.map((hexCode) => hexCode);
         console.log(this.hexCodes)
     }
 
@@ -23,6 +28,14 @@ export class GradientColorsPickerComponent {
 
     updateColor(index: number, hexCode: string) {
         hexCode = hexCode.toUpperCase();
+        this.updatedHexCodes[index] = hexCode;
         this.meshGradientPreview.setColorAtIndex(index, hexCode);
+    }
+
+    ngOnDestroy() {
+        this.ref.close({
+            updatedHexCodes: this.updatedHexCodes,
+            cssVariables: this.cssVariables,
+        });
     }
 }

@@ -39,6 +39,7 @@ export class MeshGradientComponent {
     private subscribeEvents() {
         this.eventEmitterService.gradientPause.subscribe(this.gradientPause);
         this.eventEmitterService.gradientStart.subscribe(this.gradientStart);
+        this.eventEmitterService.gradientUpdateColors.subscribe(this.gradientUpdateColors)
     }
 
     private gradientPause = () => {
@@ -47,6 +48,10 @@ export class MeshGradientComponent {
 
     private gradientStart = () => {
         this.gradientWrapper.play();
+    }
+
+    private gradientUpdateColors = (hexCodes: [string, string, string, string]) => {
+        this.gradientWrapper.setColors(hexCodes);
     }
 
     setColorAtIndex(index: number, hexCode: string) {

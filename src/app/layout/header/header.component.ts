@@ -10,15 +10,13 @@ import { EventEmitterService } from 'src/app/services/event-emitter.service';
     providers: [DialogService]
 })
 export class HeaderComponent {
-    private ref!: DynamicDialogRef;
-
     constructor(private dialogService: DialogService, private eventEmitterService: EventEmitterService) {
     }
 
     showGradientColorsPickerDialog() {
         this.eventEmitterService.gradientPause.emit();
 
-        this.ref = this.dialogService.open(GradientColorsPickerComponent, {
+        const ref = this.dialogService.open(GradientColorsPickerComponent, {
             header: 'Gradient Colors Picker',
             width: '70%',
             height: '70%',
@@ -27,10 +25,20 @@ export class HeaderComponent {
             maximizable: false
         });
 
-        this.ref.onClose.subscribe(this.onGradientColorsPickerDialogClose);
+        ref.onClose.subscribe(this.onGradientColorsPickerDialogClose);
     }
 
-    private onGradientColorsPickerDialogClose = () => {
-        this.eventEmitterService.gradientStart.emit();
+    private onGradientColorsPickerDialogClose = (value: any) => {
+        if (value) {
+            const updatedHexCodes: [string, string, string, string] = value.updatedHexCodes;
+            this.eventEmitterService.gradientStart.emit();
+            this.eventEmitterService.gradientUpdateColors.emit(updatedHexCodes);
+
+            const root = document.documentElement;
+            const cssVariables = value.cssVariables;
+            updatedHexCodes.forEach((hexCode, index) => {
+                root.style.setProperty(cssVariables[index], hexCode);
+            })
+        }
     }
 }

@@ -8,7 +8,7 @@
             <div class="display-flex flex-dir-col text-align-center">
                 <p-colorPicker [ngModel]="hexCode" (onChange)="updateColor(i, $event.value)"
                     format="hex"></p-colorPicker>
-                <span>{{hexCode}}</span>
+                <span>{{updatedHexCodes[i]}}</span>
             </div>
         </ng-container>
     </div>
