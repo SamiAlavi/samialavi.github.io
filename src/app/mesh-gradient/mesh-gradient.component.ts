@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GradientWrapper } from '../helpers/Gradient/gradient-wrapper';
 import { EventEmitterService } from '../services/event-emitter.service';
 
@@ -11,16 +11,18 @@ export class MeshGradientComponent {
 
     private debug = false;
     private gradientWrapper!: GradientWrapper;
+    @Input() divId!: string;
 
     constructor(private eventEmitterService: EventEmitterService) {
         this.subscribeEvents();
     }
 
     ngAfterViewInit() {
+        const selectorDivId = `#${this.divId}`;
         this.gradientWrapper = new GradientWrapper();
 
         // Call `initGradient` with the selector to your canvas
-        this.gradientWrapper.initGradient('#gradient-canvas');
+        this.gradientWrapper.initGradient(selectorDivId);
 
         if (this.debug) {
             (window as any).gradient = this.gradientWrapper;
