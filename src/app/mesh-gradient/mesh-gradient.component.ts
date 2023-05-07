@@ -22,8 +22,8 @@ export class MeshGradientComponent {
     ngOnInit() {
         if (this.subscribe) {
             this.subscribeEvents();
-            this.syncGradientColors();
         }
+        this.syncGradientColors();
     }
 
     private syncGradientColors() {
