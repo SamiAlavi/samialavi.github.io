@@ -1,7 +1,7 @@
 .multiply {
 	mix-blend-mode: multiply;
 }
-  
+
 .screen {
 	mix-blend-mode: screen;
 }
@@ -12,4 +12,74 @@
 
 .difference {
 	mix-blend-mode: difference;
+}
+
+.position-absolute {
+	position: absolute;
+}
+
+.top-0 {
+	top: 0px;
+}
+
+.left-0 {
+	left: 0px;
+}
+
+.padding-left-right-20 {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.padding-top-bottom-20 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-clear {
+	clear: both;
+}
+
+.width-100-perc {
+	width: 100%;
+}
+
+.height-100-perc {
+	height: 100%;
+}
+
+.display-flex {
+	display: flex;
+}
+
+.flex-dir-col {
+	flex-direction: column;
+}
+
+.flex-dir-row {
+	flex-direction: row;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.justify-content-right {
+	justify-content: right;
+}
+
+.justify-content-space-evenly {
+	justify-content: space-evenly;
+}
+
+.text-align-center {
+	text-align: center;
 }

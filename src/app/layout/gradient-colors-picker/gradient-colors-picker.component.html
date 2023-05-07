@@ -1,0 +1,15 @@
+<div>
+    <div class="text-align-center">
+        <app-mesh-gradient #meshGradientPreview [divId]="'gradient-colors-picker'" [subscribe]="false"
+            [isStatic]="true"></app-mesh-gradient>
+    </div>
+    <div class="display-flex justify-content-space-evenly padding-top-bottom-20">
+        <ng-container *ngFor="let hexCode of hexCodes; let i = index">
+            <div class="display-flex flex-dir-col text-align-center">
+                <p-colorPicker [ngModel]="hexCode" (onChange)="updateColor(i, $event.value)"
+                    format="hex"></p-colorPicker>
+                <span>{{updatedHexCodes[i]}}</span>
+            </div>
+        </ng-container>
+    </div>
+</div>

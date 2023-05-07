@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SplashScreenComponent } from './splash-screen.component';
+import { HeaderComponent } from './header.component';
 
-describe('SplashScreenComponent', () => {
-    let component: SplashScreenComponent;
-    let fixture: ComponentFixture<SplashScreenComponent>;
+describe('HeaderComponent', () => {
+    let component: HeaderComponent;
+    let fixture: ComponentFixture<HeaderComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [SplashScreenComponent]
+            declarations: [HeaderComponent]
         })
             .compileComponents();
 
-        fixture = TestBed.createComponent(SplashScreenComponent);
+        fixture = TestBed.createComponent(HeaderComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

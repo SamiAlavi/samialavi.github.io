@@ -9,8 +9,9 @@ class GradientWrapper {
     gradient: any;
     private playAnimation = true;
 
-    constructor() {
+    constructor(isStatic: boolean) {
         this.gradient = new Gradient();
+        this.gradient.isStatic = isStatic;
     }
 
     get cssVarRetries(): number {
@@ -59,8 +60,8 @@ class GradientWrapper {
 
     private normalizedRGBtoHex(color: [number, number, number]): string {
         const hexes = color.map((val) => {
-            const x = (val*255).toString(16);   //Convert to a base16 string
-            return (x.length==1) ? `0${x}` : x;   //Add zero if we get only one character
+            const x = (val * 255).toString(16);   //Convert to a base16 string
+            return (x.length == 1) ? `0${x}` : x;   //Add zero if we get only one character
         })
         return `#${hexes.join("")}`;
     }
@@ -95,13 +96,14 @@ class GradientWrapper {
     }
 
     setColorAtIndex(index: number, hexCode: string) {
+        hexCode = hexCode.replace("#", "0x");
         const color = this.normalizeColor(hexCode);
 
         if (index === 0) {
             this.setBaseColor(color);
         }
         else {
-            this.setWaveLayerColor(index-1, color);
+            this.setWaveLayerColor(index - 1, color);
         }
 
         this.validateRGBColors();

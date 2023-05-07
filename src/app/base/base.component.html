@@ -1,4 +1,12 @@
 <div id="background" [style.background-color]="backgroundColor">
-    <app-mesh-gradient></app-mesh-gradient>
-    <app-splash-screen></app-splash-screen>
+    <app-mesh-gradient [divId]="'gradient-canvas'" [subscribe]="true" [isStatic]="false"></app-mesh-gradient>
+    <ng-container *ngIf="isSplashScreenVisible; else content">
+        <app-splash-screen (destroyed)="isSplashScreenDestroyed($event)"></app-splash-screen>
+    </ng-container>
 </div>
+
+<ng-template #content>
+    <div *ngIf="!isSplashScreenVisible" class="position-absolute top-0 left-0">
+        <app-header></app-header>
+    </div>
+</ng-template>
